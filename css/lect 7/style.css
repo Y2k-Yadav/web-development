@@ -1,0 +1,35 @@
+#external{
+    background-color: #066e97;
+    color: blueviolet;
+}
+/* this is id */
+#divlorem{
+    background-color: orange;
+}
+/* this using class */
+.wrapper{
+    background-color: pink;
+}
+/* this is using :tag */
+div{
+    background-color: greenyellow;
+}
+
+/* pesudo selctor explained  */
+
+/* ul>li:nth-child(2){
+    background-color: red;
+}
+/* this gives the last line of the line into red color */
+
+/* ul>li:nth-child(3){ */
+    /* color:blueviolet */
+/* } */ */
+
+ul li:nth-last-child(3){
+    background-color: blue;
+}
+
+ul li:nth-last-of-type(3){
+    background-color:wheat;
+}

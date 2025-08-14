@@ -1,0 +1,22 @@
+span{
+       background-color: yellowgreen;
+       font-size: 20px;
+       padding:30px;
+       border:1px solid red;
+       display:inline;
+
+}
+.span2{
+    display:inline-block;
+    margin:auto;
+
+}
+div{
+    border: 5px solid black;
+    width:200px;
+    margin:100px;
+}
+
+h1{
+padding:10px;
+}

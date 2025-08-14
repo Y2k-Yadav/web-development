@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+    font-size:60px;
+}
+
+.parent {
+  /* width: 400px;
+  height: 500px; */
+  width: 100vw;
+  height: 60vh;
+  background-color: lightcoral;
+  font-size: 30px;
+  /* default size is 16px for nomral text which we write in the tag example p tag span etc*/
+}
+
+.child {
+  background-color: rgba(0, 128, 0, 0.658);
+  height: 60%;
+  width: 40%;
+  font-size: 10rem;
+  /* display:inline-block; */
+  /* margin:auto; */
+}

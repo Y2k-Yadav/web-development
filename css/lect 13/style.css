@@ -1,0 +1,30 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+.container{
+    margin:auto;
+    border:5px solid white;
+    width:50vw;
+    height:100vh;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-between;/* main axis*/
+    /* float:right; */ /* cross axis*/
+    /* flex-direction:column; */
+    align-items:center;
+    align-content:space-evenly;
+    gap:10px;
+
+}
+
+.box{
+    background-color: pink;
+    width:50px;
+    height:50px;
+    border:1px solid black;
+}

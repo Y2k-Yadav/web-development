@@ -1,0 +1,281 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.container {
+  width: 100vw;
+  min-height: 100vh;
+}
+.leftnav {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 15px;
+  position:sticky;
+  top:0px;
+}
+
+.youtubelogo {
+  width: 100px;
+}
+
+.centerNav {
+  display: flex;
+  width: 60%;
+  justify-items: center;
+  margin-left: 250px;
+}
+
+.centerNav > input {
+  background-color: black;
+  border: 1px solid #303030;
+  font-size: 17px;
+  width: 50%;
+  padding: 7px 15px;
+  border-right: #222222;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  
+}
+
+.centerNav img:nth-child(2) {
+  padding: 7px;
+  background-color: #222222;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.centerNav img:nth-child(3) {
+  background-color: #222222;
+  border-radius: 100%;
+  margin-top: 5px;
+  margin-left: 10px;
+  width: 30px;
+  height:30px;
+}
+
+.rightNav {
+  display: flex;
+  gap: 20px;
+}
+
+.rightNav img:nth-child(3) {
+  width: 15x;
+  height: 20px;
+  border-radius: 50%;
+}
+.ytpremium {
+  font-family: Roboto, Arial, sans-serif;
+  padding-top: 10px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.ytdesc > h2 {
+  padding: 10px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+}
+.ytpremiumlogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ytdesc > h2 {
+  text-align: center;
+}
+
+.ytpremiumdetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-align: center;
+}
+
+.ytpremiumdetails > button {
+  background-color: #3ea6ff;
+  padding: 5px;
+  border-radius: 30px;
+  width: 160px;
+  font-weight: 600;
+  border:none;
+}
+
+.ytpremiumdetails p:nth-child(2) {
+  font-size: 20px;
+  font-weight: lighter;
+}
+.annual {
+  color: #76c4ff;
+}
+.ytpremiumdetails p:nth-child(4) {
+  color: #76c4ff;
+}
+
+.features {
+  height: 227px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  padding-left: 200px;
+  padding-right: 200px;
+  text-align: center;
+
+}
+.leftFeatures,.centerFeatures,.rightFeatures{
+  height: 75%;
+  width:30%;
+  gap:20%;
+}
+
+.features h2{
+    color:white;
+}
+
+.features p{
+  color: rgba(226, 226, 226, 0.711);
+}
+
+.features  img{
+    width:22%;
+    height:30%;
+}
+.bg1{
+  width:100%;
+  height:370px;
+  background-image: url(./assets/bg1.jpeg);
+  background-size:cover;
+}
+.bg1 > div> h2{
+  font-size: 2em;
+  color:white;
+  font-weight: 100;
+}
+.bg1 > div> p{
+  color:rgba(164, 162, 162, 0.884);
+  line-height: 18px;
+}
+.bg1 > div{
+  display:flex;
+  flex-direction: column;
+  gap:20px;
+  padding: 120px 0px 100px 630px;
+}
+.bg2{
+  width:100%;
+  height:370px;
+  background-image: url(./assets/bg2.jpeg);
+  background-size:cover;
+}
+.bg2 > div> h2{
+  font-size: 2em;
+  color:white;
+  font-weight: 100;
+}
+.bg2 > div> p{
+  color:rgba(164, 162, 162, 0.884);
+  line-height: 18px;
+}
+.bg2 > div{
+  display:flex;
+  flex-direction: column;
+  gap:20px;
+  padding: 120px 0px 100px 300px;
+}
+.bg3{
+  width:100%;
+  height:370px;
+  background-image: url(./assets/bg3.jpeg);
+  background-size:cover;
+}
+.bg3 > div> h2{
+  font-size: 2em;
+  color:white;
+  font-weight: 100;
+}
+.bg3 > div> p{
+  color:rgba(164, 162, 162, 0.884);
+  line-height: 18px;
+}
+.bg3 > div{
+  display:flex;
+  flex-direction: column;
+  gap:20px;
+  padding: 120px 0px 100px 630px;
+}
+
+.bg4{
+  width:100%;
+  height:370px;
+  background-image: url(./assets/bg4.jpeg);
+  background-size:cover;
+}
+.bg4 > div> h2{
+  font-size: 2em;
+  color:white;
+  font-weight: 100;
+}
+.bg4 > div> p{
+  color:rgba(164, 162, 162, 0.884);
+  line-height: 18px;
+}
+.bg4 > div{
+  display:flex;
+  flex-direction: column;
+  gap:20px;
+  padding: 120px 0px 100px 300px;
+}
+
+.faq{
+  width:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  background-color: black;
+  height:300px;
+}
+
+.faqdetails{
+  width:300px;
+  display:flex;
+  flex-direction: column;
+  gap:5px;
+}
+
+.drop{
+  display:flex;
+  flex-direction: column; 
+  width:400px;
+  justify-content: space-between;
+  padding:5px;
+}
+
+hr{
+  opacity: 0.2;
+}
+
+.helpcenter > p{
+  padding-top:30px;
+  padding-left:48px;
+}
+.helpcenter >p> span{
+ color:#3ebaff;
+}
