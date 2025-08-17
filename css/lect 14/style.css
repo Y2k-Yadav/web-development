@@ -2,17 +2,30 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color:blue;
+}
+.container{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height:100vh;
 }
 
 .box {
   width: 200px;
   height: 200px;
   background-color: rgb(246, 0, 41);
+  transform:perspective(300px) scaleZ(5,3,6) rotatey(6deg);
+  /* transform: translateX(50px);
+  transform:translateY(30px); */
+  /* transform: translate(50px,50px); */
+  /* transform: translate() rotate() scale(); */
+  /* transform: translateX(30px) rotate(45deg) scale(1.1); */
 }
-
-.box:hover {
+                                                         
+/* .box:hover {
   width: 500px;
   height: 500px;
   background-color: hotpink;
   transition: all, 0.5s, ease, 1s;
-}
+} */
