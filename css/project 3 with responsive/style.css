@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(bg.jpg);
+    background-size: cover;
+
+}
+
+.loginpage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    height: 80%;
+    width: 50%;
+    border-radius: 10px;
+    background-color: #86868652;
+    backdrop-filter: blur(2px);
+    gap: 30px;
+    border: none;
+}
+
+input[type="email"],
+[type="password"] {
+    padding: 20px;
+    border-radius: 10px;
+    height: 25px;
+    border: none;
+    font-size: 15px;
+    background-color: white;
+
+}
+
+.emailpassword {
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 50%;
+}
+
+.RemFor {
+
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    font-size: 14px;
+    gap: 30px;
+}
+
+.RemFor>div {
+    width: 150px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.RemFor>div>label {
+    padding-top: 2px;
+}
+
+button {
+    padding: 20px 40px;
+    border: none;
+    border-radius: 10px;
+    font-size: 10px;
+    background: linear-gradient(rgba(255, 255, 0, 0.559), rgba(255, 192, 203, 0.683));
+}
+
+h1 {
+    font-size: 60px;
+    font-family: "Londrina Shadow", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: blue;
+}
+
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+
+button:hover {
+    cursor: pointer;
+}
+
+p {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+div label {
+    cursor: pointer;
+}
+
+/* mobile devices :320-480 */
+
+@media screen and (min-width : 320px) and (max-width:480px) {
+    .container {
+        overflow: hidden;
+        height: 100vh;
+        width: 100vw;
+        background-position: center;
+
+    }
+
+    .loginpage {
+        height: 80%;
+        width: 90%;
+    }
+
+    .RemFor {
+
+        width: 95%;
+        justify-content: space-evenly;
+        font-size: 16px;
+    }
+
+    .RemFor>div {
+        width: 120px;
+        gap: 5px;
+    }
+
+    input[type="email"],
+    [type="password"] {
+        padding: 10px;
+        border-radius: 15px;
+        height: 40px;
+        width: 180px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 10px 30px;
+        border-radius: 10px;
+        font-size: 15px;
+
+    }
+
+    h1 {
+        font-size: 40px;
+
+    }
+
+    .emailpassword {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        width: 50%;
+    }
+
+    input[type="checkbox"] {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Tablets and ipads : 481-768px  */
+
+@media screen and (min-width : 481px) and (max-width:768px) {
+
+    .loginpage {
+
+        min-height: 80%;
+        width: 75%;
+        max-width: 500px;
+        background-position: center;
+    }
+
+    h1 {
+        font-size: 70px;
+    }
+
+
+    .emailpassword {
+
+        width: 60%;
+    }
+
+    .RemFor {
+        display: flex;
+        width: 85%;
+        justify-content: space-between;
+        font-size: 18px;
+    }
+
+    .RemFor>div {
+        width: 140px;
+        gap: 5px;
+    }
+
+    button {
+        width: 80px;
+        height: 40px;
+        padding: 10px 10px;
+        font-size: 16px;
+        font-weight: 600;
+
+    }
+
+    input[type="checkbox"] {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+/* Small screens : 769-1024px  */
+
+@media screen and (min-width : 769px) and (max-width:1024px) {
+    .loginpage {
+
+        height: 80%;
+        width: 80%;
+        max-width: 650px;
+        background-position: center;
+
+    }
+
+    h1 {
+        font-size: 70px;
+    }
+
+    input[type="email"],
+    [type="password"] {
+        border-radius: 15px;
+        height: 30px;
+        font-size: 15px;
+        width: 100%;
+    }
+
+    .RemFor {
+
+        width: 60%;
+        font-size: 20px;
+    }
+
+    .emailpassword {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        width: 60%;
+    }
+
+    input[type="checkbox"] {
+        width: 17px;
+        height: 17px;
+    }
+
+    button {
+        width: 85px;
+        height: 45px;
+        border-radius: 15px;
+        padding: 10px 10px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+
+/* Large screens; 1025-1200px */
+
+@media screen and (min-width : 1025px) and (max-width:1200px) {
+
+    h1 {
+        font-size: 80px;
+    }
+
+    .loginpage {
+
+    height: 85%;
+    width: 70%;
+    max-width:800px;
+    background-position: center;
+}
+
+.RemFor {
+    width: 70%;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+    input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+    }
+
+        button {
+        width: 95px;
+        height: 50px;
+        border-radius: 20px;
+        padding: 10px 10px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+}
