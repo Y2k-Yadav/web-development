@@ -1,0 +1,929 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "WhatsApp Sans Var";
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fcf5eb;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  gap: 20px;
+  position: relative;
+}
+.navbar {
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(252, 245, 235, 0.726);
+  backdrop-filter: blur(3px);
+}
+
+.left-part {
+  flex: 0.6;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.left-part > img {
+  width: 130px;
+  height: 80%;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.center-part {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.center-part > .Features {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.Features > img {
+  transform: rotate(90deg);
+}
+
+.Features > p::before {
+  content: "";
+  width: 15%;
+  height: 2px;
+  background-color: #25d366;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 3px;
+  transform: scaleX(0);
+  transition: all 0.5s ease-in;
+  transform-origin: left;
+}
+
+.Features > p:hover::before {
+  transform: scaleX(1);
+}
+
+.Features > span {
+  padding-top: 8px;
+  font-size: 18px;
+}
+
+.center-part > .ptags {
+  flex: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  font-size: 20px;
+}
+
+.ptags > p {
+  position: relative;
+  cursor: pointer;
+}
+
+.ptags > p::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #25d366;
+  position: absolute;
+  bottom: 0;
+  transform: scaleX(0);
+  transition: all 0.5s ease-in;
+  transform-origin: left;
+}
+
+.ptags > p:hover::before {
+  transform: scaleX(1);
+}
+
+.last-part {
+  flex: 0.7;
+  margin-left: 20px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.button-1 {
+  height: 50px;
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.button-1 > button {
+  width: 90%;
+  height: 100%;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ffffff;
+  cursor: pointer;
+  position: relative;
+}
+
+.button-2 {
+  height: 50px;
+  width: 120px;
+  display: flex;
+}
+.button-2 > button {
+  width: 100%;
+  border-radius: 30px;
+  background-color: #25d366;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.button-2 > button::before {
+  border-radius: 50%;
+  scale: 1.3;
+  z-index: -1;
+  content: "";
+  opacity: 0;
+  position: absolute;
+  background-color: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 500ms;
+  transform: translateY(40px);
+}
+
+.button-2 > button:hover::before {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.button-2 > button > img {
+  height: 20px;
+  width: 30px;
+}
+
+.firstSection {
+  padding: 15px 30px;
+  width: 96%;
+  height: 700px;
+  overflow: hidden;
+}
+
+.maabeti {
+  height: 650px;
+  width: 100%;
+  background-image: url(./assests/mobile.png);
+  border-radius: 30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.leftdiv {
+  width: 20px;
+  height: 500px;
+  color: white;
+}
+
+.firstSection > p {
+  padding-top: 15px;
+  text-align: end;
+  font-size: 12px;
+}
+
+.leftdiv {
+  height: 600px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+  justify-content: center;
+  gap: 50px;
+}
+
+.leftdiv .inside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.leftdiv > .inside :nth-child(1) {
+  font-size: 75px;
+  text-align: center;
+}
+.leftdiv > .inside :nth-child(2) {
+  padding-top: 10px;
+  margin-left: 70px;
+  width: 350px;
+  height: 80px;
+  font-size: 18px;
+}
+
+.downloadbutton {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  background-color: #25d366;
+  width: 120px;
+  height: 40px;
+  margin-left: 150px;
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.downloadbutton::before {
+  border-radius: 50%;
+  scale: 1.2;
+  z-index: -1;
+  content: "";
+  opacity: 0;
+  position: absolute;
+  background-color: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 500ms;
+  transform: translateY(40px);
+}
+
+.downloadbutton:hover {
+  cursor: pointer;
+}
+.downloadbutton:hover::before {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.rightdiv {
+  padding-top: 22px;
+  height: 600px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+}
+
+.rightdiv > :nth-child(1) {
+  padding-right: 110px;
+  height: 65px;
+  animation: french 1s;
+}
+@keyframes french {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.rightdiv > :nth-child(2) {
+  padding-left: 80px;
+  height: 45px;
+  animation: study 1.25s;
+}
+@keyframes study {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.rightdiv > div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  width: 400px;
+  position: relative;
+  padding-top: 10px;
+  height: 150px;
+  margin-right: 40px;
+}
+
+.rightdiv > div :nth-child(1) {
+  height: 50px;
+  animation: Ready 1.5s;
+}
+@keyframes Ready {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.rightdiv > div :nth-child(2) {
+  position: absolute;
+  padding: 0px;
+  width: 70px;
+  margin-top: 40px;
+  margin-left: 30px;
+  height: auto;
+  animation: react 1.5s;
+}
+@keyframes react {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.secondsection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 1000px;
+  width: 100%;
+  gap: 10px;
+  padding: 15px 30px;
+}
+
+.first,
+.third {
+  width: 95%;
+  height: 30%;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.first > img,
+.third > img {
+  width: 98%;
+  height: 90%;
+}
+
+.second {
+  width: 95%;
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.second > p {
+  width: 98%;
+  height: 90%;
+  font-size: 40px;
+  padding-top: 30px;
+  font-family: "WhatsApp Sans Var";
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.secondsection > img {
+  animation: test 1s;
+}
+@keyframes test {
+  0% {
+    transform: translateY(90px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.thirdsection {
+  height: 70%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 30px;
+}
+
+.firstdiv {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+.leftdiv1 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  padding-right: 50px;
+  align-items: end;
+  justify-content: center;
+}
+
+.leftdiv1 > h2 {
+  font-family: "WhatsApp Sans Var";
+  color: black;
+  font-size: 30px;
+  height: 150px;
+  width: 300px;
+  font-size: 30px;
+  letter-spacing: 4px;
+}
+
+.leftdiv1 > p {
+  width: 300px;
+  height: 100px;
+  font-size: 20px;
+}
+.learn {
+  width: 150px;
+  height: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 170px;
+}
+
+.learn > p {
+  margin: 0;
+  width: auto;
+  height: 100%;
+  position: relative;
+}
+
+.learn > p::before {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #25d366;
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+}
+
+.learn img {
+  width: 15px;
+  height: 15px;
+}
+
+.rightdiv1 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  align-items: start;
+  justify-content: start;
+}
+.rightdiv1 > img {
+  width: 40%;
+  height: 100%;
+}
+
+.seconddiv {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.rightdiv2 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  align-items: end;
+}
+.rightdiv2 > img {
+  width: 80%;
+  height: 40%;
+}
+.leftdiv2 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  align-items: start;
+  justify-content: center;
+}
+
+.leftdiv2 > .whatsapp {
+  font-family: "WhatsApp Sans Var";
+  color: black;
+  font-size: 30px;
+  height: 100px;
+  width: 300px;
+  font-size: 30px;
+  letter-spacing: 4px;
+  text-align: start;
+  font-weight: 600;
+}
+
+.leftdiv2 > p {
+  width: 500px;
+  font-size: 20px;
+}
+.divbtn {
+  width: 300px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.leftdiv2 > div > button {
+  margin-top: 30px;
+  width: 200px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #25d366;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.leftdiv2 > button > img {
+  width: 20px;
+}
+
+.thirddiv {
+  background-color: #111b21;
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.thirddiv > .leftdiv3 {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding-right: 30px;
+}
+
+.thirddiv > .leftdiv3 > img {
+  width: 70%;
+  height: 500px;
+}
+
+.thirddiv > .rightdiv3 {
+  padding-left: 30px;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 20px;
+}
+
+.rightdiv3 > h2 {
+  width: 200px;
+  height: 70px;
+  font-size: 40px;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.rightdiv3 > p {
+  width: 400px;
+  height: 90px;
+}
+
+.rightdiv3 :nth-child(4) {
+  width: 120px;
+  height: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
+}
+
+.fourthdiv {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+.leftdiv4 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  padding-right: 50px;
+  align-items: end;
+  justify-content: center;
+}
+
+.leftdiv4 > h2 {
+  font-family: "WhatsApp Sans Var";
+  color: black;
+  font-size: 30px;
+  height: 150px;
+  width: 300px;
+  font-size: 30px;
+  letter-spacing: 4px;
+}
+
+.leftdiv4 > p {
+  width: 300px;
+  height: 100px;
+  font-size: 20px;
+}
+.leftdiv4 > span {
+  display: inline-block;
+  position: absolute;
+  bottom: 200px;
+  left: 330px;
+}
+.leftdiv4 > img {
+  width: 10px;
+  position: absolute;
+  bottom: 200px;
+  left: 420px;
+}
+
+.rightdiv4 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  align-items: start;
+  justify-content: start;
+  position: relative;
+}
+
+.rightdiv4 :nth-child(1) {
+  width: 400px;
+  height: 550px;
+}
+
+.rightdiv4 :nth-child(2) {
+  top: 100px;
+  width: 400px;
+  height: 350px;
+  position: absolute;
+}
+
+.fivthdiv {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+}
+
+.rightdiv5 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 20%;
+  align-items: end;
+  position: relative;
+  padding-right: 30px;
+}
+.rightdiv5 :nth-child(1) {
+  width: 350px;
+  height: 600px;
+}
+
+.rightdiv5 :nth-child(2) {
+  position: absolute;
+  width: 250px;
+  bottom: 30px;
+  left: 378px;
+}
+.leftdiv5 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  align-items: start;
+  justify-content: center;
+  gap: 20px;
+}
+
+.leftdiv5 > p {
+  width: 400px;
+  font-size: 12px;
+}
+
+.sixthdiv {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+.leftdiv6 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  padding-right: 50px;
+  align-items: end;
+  justify-content: center;
+}
+
+.leftdiv6 > h2 {
+  font-family: "WhatsApp Sans Var";
+  color: black;
+  font-size: 30px;
+  height: 150px;
+  width: 300px;
+  font-size: 30px;
+  letter-spacing: 4px;
+}
+
+.leftdiv6 > p {
+  width: 300px;
+  height: 150px;
+  font-size: 20px;
+}
+
+.rightdiv6 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  align-items: start;
+  justify-content: start;
+  position: relative;
+}
+
+footer {
+  width: 98%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #111b21;
+  color: white;
+  gap: 30px;
+}
+
+.upper {
+  width: 85%;
+  height: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.box1 {
+  width: 18%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: end;
+}
+.box2,
+.box3,
+.box4,
+.box5 {
+  width: 20%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.innerbox > p:hover {
+  cursor: pointer;
+  text-decoration: underline white;
+}
+
+.innerbox {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+hr {
+  width: 80%;
+  border: none;
+  height: 2px;
+  background-color: #33463f;
+  margin: 0;
+}
+
+.lower {
+  /* margin-top: 10px; */
+  width: 80%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 30px;
+  position: relative;
+}
+.lower > p {
+  padding-top: 15px;
+}
+
+.lower > p:hover {
+  cursor: pointer;
+  text-decoration: underline white;
+}
+.social {
+  display: flex;
+  height: 60%;
+  width: 40%;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.icons {
+  padding: 10px;
+  border: 1px solid white;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.icons:hover {
+  background-color: #25d366;
+  border: #111b2100;
+}
+
+.lower > select {
+  height: 40px;
+  width: 130px;
+  border-radius: 30px;
+  padding: 2px 15px;
+  border: none;
+  -webkit-appearance: none;
+}
+
+.arrow {
+  transform: rotate(-90deg);
+  width: 50px;
+  height: 17px;
+  position: absolute;
+  right: 20px;
+  top: 12px;
+}
