@@ -1,0 +1,38 @@
+/* .child{
+    margin:30px;
+    width:200px;
+    height:200px;
+    background-color: #da9b9b;
+}
+
+#maindiv{
+    background-color: greenyellow;
+} */
+
+body{
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-1, .box-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+margin:30px;
+background-color: grey;
+width:700px;
+height:500px;
+}
+
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    margin:20px;
+    width:400px;
+    height:200px;
+    background-color: lightskyblue;
+}
