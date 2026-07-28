@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.ticTac {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 35px;
+  border: black;
+  border-radius: 5px;
+}
+
+#rsbtn {
+  padding: 5px 10px;
+  height: 50px;
+  width: 250px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  margin-top: 20px;
+  background: linear-gradient(to bottom, #434343 0%, #000000 100%);
+  color: #ffffff;
+  border: 1px solid #000000;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#rsbtn:hover {
+  background: linear-gradient(to bottom, #555555 0%, #111111 100%);
+}
+
+.winnerClass {
+  background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+  color: #000000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+.signature {
+  color: rgba(255, 255, 255, 0.456);
+  font-weight: bolder;
+  padding: 4px 8px;
+  cursor: pointer;
+  /* Creates a background that is half transparent, half black */
+  background: linear-gradient(to top, #000000 50%, transparent 50%);
+  background-size: 100% 200%;
+  background-position: top;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 5px;
+}
+
+.signature:hover {
+  background-position: bottom; /* Slides the black background up */
+  color: white;
+}
