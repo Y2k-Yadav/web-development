@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+      integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <div class="main">
+      <h1 class="heading">PASSWORD GENERATOR</h1>
+      <div class="firstdiv">
+        <h1 id="newPass">Click for Generate Password</h1>
+        <i
+          class="fa-regular fa-copy"
+          style="color: hsl(0, 0%, 0%)"
+          id="copybtn"
+        ></i>
+      </div>
+
+      <div class="secondiv">
+        <input type="range" id="range" min="6" max="20" value="10" />
+        <p id="rangeVal" style="font-size:25px; font-weight: bold;" >10</p>
+      </div>
+
+      <div class="thirddiv">
+        <div class="div1">
+          <input type="checkbox" name="captial Letters" id="capLet" />
+          <label for="capLet">Upper Case</label>
+        </div>
+        <div class="div2">
+        <input type="checkbox" name="small Letters" id="smaLet" />
+        <label for="smaLet">Lower Case</label>
+        </div>
+        <div class="div3">
+        <input type="checkbox" name="numbers" id="number" />
+        <label for="number">Numbers</label>
+        </div>
+        <div class="div4">
+        <input type="checkbox" name="symbols" id="symbol" />
+        <label for="symbol">Symbols</label>
+        </div>      
+      </div>
+      <button id="genPass">Generate Password</button>
+      <div class="signature">YADAV</div>
+  </body>
+</html>
