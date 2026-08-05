@@ -1,0 +1,717 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Sofia Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.maindiv {
+    background-color: rgb(13, 17, 23);
+    width: 30%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+h1 {
+    font-size: 22px;
+    color: white;
+    transform: scale(1);
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: transform 0.4s ease, letter-spacing 0.4s ease;
+}
+
+h1:hover {
+    transform: scale(1.05);
+    letter-spacing: 3px;
+}
+
+.firstdiv {
+    width: 90%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchbar {
+    width: 75%;
+    height: 60%;
+}
+
+input[type="text"] {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    padding: 0px 5px;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    background-color: rgb(1, 4, 9);
+    border: 1px solid rgba(255, 255, 255, 0.212);
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #238636;
+}
+
+input[type="text"]::placeholder {
+    color: white;
+}
+
+.searchbutton {
+    width: 20%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button1 {
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.button1:hover {
+    /* fixed: was "button1:hover" (missing dot), so hover never fired */
+    background-color: rgb(0, 255, 0);
+    color: black;
+    cursor: pointer;
+}
+
+.secondiv {
+    width: 90%;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #47576e;
+    gap: 10px;
+    border-radius: 5px;
+}
+
+.profile {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    gap: 40px;
+}
+
+.profile-image {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-image>img {
+    width: 100%;
+    height: 100%;
+}
+
+.profile-info {
+    width: 60%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.bio {
+    width: 90%;
+    height: 15%;
+}
+
+.bio>p {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    text-align: start;
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+.thirdiv {
+    display: flex;
+    justify-content: space-around;
+    padding: 0px 10px;
+    align-items: center;
+    width: 90%;
+    height: 20%;
+    font-size: 18px;
+    background-color: #47576e;
+    border-radius: 5px;
+    gap: 10px;
+}
+
+.detail {
+    width: 25%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.699);
+    border-radius: 10px;
+}
+
+.detail.repos {
+    color: aqua;
+}
+
+.detail.followers {
+    color: orange;
+}
+
+.detail.following {
+    color: greenyellow;
+}
+
+.detail.joined {
+    color: rgb(221, 221, 1);
+}
+
+.thirdiv p {
+    text-align: center;
+}
+
+.fourthdiv {
+    width: 90%;
+    height: 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fourthdiv button {
+    width: 100%;
+    height: 70%;
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.212);
+    border-radius: 5px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.fourthdiv button:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: #238636;
+}
+
+.loader,
+.loader:before,
+.loader:after {
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    animation-fill-mode: both;
+    animation: bblFadInOut 1.8s infinite ease-in-out;
+}
+
+.loader {
+    --color-1: #fff;
+    --size: 1px;
+
+    color: var(--color-1);
+    font-size: calc(7 * var(--size));
+    position: relative;
+    text-indent: -9999em;
+    transform: translateZ(0);
+    animation-delay: -0.16s;
+}
+
+.loader:before,
+.loader:after {
+    content: '';
+    position: absolute;
+    top: 0;
+}
+
+.loader:before {
+    left: -3.5em;
+    animation-delay: -0.32s;
+}
+
+.loader:after {
+    left: 3.5em;
+}
+
+@keyframes bblFadInOut {
+
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 2.5em 0 -1.3em;
+    }
+
+    40% {
+        box-shadow: 0 2.5em 0 0;
+    }
+}
+
+/* ============================
+   RESPONSIVE BREAKPOINTS
+   ============================
+   Strategy: your default CSS above targets desktop.
+   Each media query below only overrides what needs to
+   change at that screen width - everything not
+   mentioned here keeps using the desktop rules.
+*/
+
+/* Tablets (roughly iPad-sized, ~768px and under) */
+@media (min-width: 481px) and (max-width: 768px) {
+.maindiv {
+    width: 90%;
+    height: 70%;
+}
+
+    h1 {
+        font-size: 20px;
+    }
+.searchbutton {
+    width: 30%;
+    height: 35px;
+}
+input[type="text"] {
+    width: 95%;
+    height: 100%;
+    font-size: 13px;
+    color: white;
+    background-color: rgb(1, 4, 9);
+    border: 1px solid rgba(255, 255, 255, 0.212);
+    transition: border-color 0.2s;
+}
+
+
+.thirdiv {
+    font-size: 14px;
+    gap: 4px;
+    padding: 0px 5px;
+}
+
+
+    .profile {
+        gap: 20px;
+        /* was 40px - too much gap on a smaller card */
+    }
+
+    .profile-info {
+        font-size: 16px;
+    }
+
+    .bio>p {
+        font-size: 16px;
+    }
+
+    .thirdiv {
+        font-size: 14px;
+    }
+}
+
+/* Phones (roughly ~480px and under) */
+@media (max-width: 480px) {
+.maindiv {
+    width: 92%;
+    height: 90%;
+    padding: 10px 0px;
+}
+
+h1 {
+    font-size: 18px;
+    height: auto;
+    padding: 5px;
+}
+
+    .firstdiv {
+        flex-direction: column;
+        /* stack search input above the button instead of side-by-side */
+        height: auto;
+        gap: 8px;
+        padding: 10px 0;
+    }
+.secondiv {
+    width: 90%;
+    height: 44%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #47576e;
+    border-radius: 5px;
+    gap: 0px;
+}
+
+    .searchbar,
+    .searchbutton {
+        width: 100%;
+        /* both now take full width since they're stacked */
+        height: 40px;
+    }
+
+    .profile {
+        flex-direction: column;
+    }
+
+
+    .profile-image {
+        width: 80px;
+        /* fixed size instead of % - percentages of a % get unpredictable */
+        height: 80px;
+    }
+
+.profile-info {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    height: auto;
+}
+
+    .bio {
+        width: 100%;
+        text-align: center;
+    }
+
+    .bio>p {
+        justify-content: center;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .thirdiv {
+        flex-wrap: wrap;
+        /* let the 4 stat boxes wrap into 2 rows of 2 instead of squeezing into 1 row */
+        height: auto;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .detail {
+        width: 45%;
+        /* 2 per row instead of 4 cramped into one row */
+        height: auto;
+        padding: 8px 0;
+    }
+}
+
+/* Small laptops / larger tablets (769px – 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+.container {
+    padding-top: 10%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+.maindiv {
+    width: 80%;
+    max-width: 600px;
+    height: 90%;
+    margin: 0 auto;
+}
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .searchbutton {
+        width: 25%;
+        height: 38px;
+    }
+
+    input[type="text"] {
+        font-size: 14px;
+    }
+
+    .thirdiv {
+        font-size: 15px;
+        gap: 6px;
+        padding: 0px 8px;
+    }
+
+    .profile {
+        gap: 30px;
+    }
+
+    .profile-info {
+        font-size: 17px;
+    }
+
+    .bio > p {
+        font-size: 17px;
+    }
+}
+
+/* Desktops / large screens (1025px and up) */
+@media (min-width: 1025px) {
+
+
+.maindiv {
+    width: 100%;
+    max-width: 700px;
+    height: 90%;
+    margin: 0 auto;
+}
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .searchbutton {
+        width: 20%;
+        height: 45px;
+    }
+
+    input[type="text"] {
+        font-size: 15px;
+    }
+
+    .thirdiv {
+        font-size: 16px;
+        gap: 8px;
+        padding: 0px 10px;
+    }
+    .profile-image {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+    .profile {
+        gap: 20px;
+        padding:0px 20px;   /* your original desktop gap, before you shrank it for tablet */
+    }
+
+    .profile-info {
+        font-size: 18px;
+    }
+
+    .bio > p {
+        font-size: 18px;
+    }
+}
+
+/* Very small screens (250px and under — foldables, smartwatches, old devices) */
+@media (max-width: 250px) {
+    .maindiv {
+        width: 98%;
+        height: 95%;
+        padding: 5px 0px;
+    }
+
+    h1 {
+        font-size: 14px;
+        padding: 3px;
+    }
+
+    .firstdiv {
+        padding: 5px 0;
+        gap: 5px;
+    }
+
+    input[type="text"] {
+        font-size: 11px;
+    }
+    .profile {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+    .searchbutton,
+    .searchbar {
+        height: 32px;
+    }
+
+    .button1 {
+        font-size: 13px;
+    }
+
+    .secondiv {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .profile-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .profile-info {
+        font-size: 12px;
+    }
+
+    .bio > p {
+        font-size: 11px;
+    }
+
+    .thirdiv {
+        flex-direction: column;
+        /* single column instead of 2x2 wrap - not enough width for 2 per row */
+        height: auto;
+        gap: 6px;
+        padding: 8px;
+        font-size: 11px;
+    }
+
+    .detail {
+        width: 100%;
+        /* full width now that they're stacked one per row */
+        height: auto;
+        padding: 6px 0;
+    }
+
+    .fourthdiv button {
+        font-size: 12px;
+        height: 32px;
+    }
+}
+/* ============================
+   SIGNATURE
+   ============================ */
+.signature {
+    position: fixed;
+    bottom: 16px;
+    right: 20px;
+    font-family: "Sofia Sans", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: 6px;
+    opacity: 0;
+    pointer-events: none;
+    animation: signature-reveal 1.4s ease-out 0.3s forwards;
+}
+
+@keyframes signature-reveal {
+    0% {
+        opacity: 0;
+        letter-spacing: 12px;
+        transform: translateY(6px);
+    }
+    100% {
+        opacity: 1;
+        letter-spacing: 2px;
+        transform: translateY(0);
+    }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+    .signature {
+        font-size: 14px;
+        bottom: 12px;
+        right: 14px;
+    }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+    .signature {
+        font-size: 12px;
+        bottom: 8px;
+        right: 10px;
+        letter-spacing: 1px;
+    }
+
+    @keyframes signature-reveal {
+        0% {
+            opacity: 0;
+            letter-spacing: 6px;
+            transform: translateY(4px);
+        }
+        100% {
+            opacity: 1;
+            letter-spacing: 1px;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Very small screens */
+@media (max-width: 250px) {
+    .signature {
+        font-size: 10px;
+        bottom: 6px;
+        right: 6px;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* Small laptops / larger tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .signature {
+        font-size: 15px;
+        bottom: 14px;
+        right: 18px;
+    }
+}
+
+
+@media (min-width: 1025px) {
+    .signature {
+        font-size: 17px;
+        bottom: 20px;
+        right: 24px;
+    }
+}
