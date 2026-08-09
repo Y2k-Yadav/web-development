@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="shortcut icon" href="favicon.png" type="image/png" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="weather-app">
+        <div class="search-box">
+          <input
+            type="text"
+            id="location-input"
+            placeholder="Enter your location"
+          />
+          <button id="search-btn">Search</button>
+        </div>
+        <div class="location-box">
+          <p>or</p>
+          <button id="current-location-btn">Current Location</button>
+        </div>
+        <div class="weather-card">
+          <div class="temperature">
+            <h1 id="degree">23°C</h1>
+          </div>
+          <div class="city-name">
+            <h2 id="city">Raichur</h2>
+          </div>
+          <div class="imgdetail">
+            <img class="weather-img" src="./favicon.png" alt="icon" />
+            <p class="desc">overcast clouds</p>
+          </div>
+          <div class="weather-details">
+            <div class="wind" style="align-items: center">
+              <p>Wind</p>
+              <p id="windvalue">15 km/h</p>
+            </div>
+            <div class="pressure" style="align-items: center">
+              <p>Pressure</p>
+              <p class="pressurevalue">5454</p>
+            </div>
+            <div class="humidity" style="align-items: center">
+              <p>Humidity</p>
+              <p class="humidityvalue">50%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="app-footer">
+      <p>
+        Built by
+        <a href="https://github.com/Y2K-Yadav" target="_blank">Y2K-Yadav</a>
+      </p>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>

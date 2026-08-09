@@ -1,0 +1,821 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-image: url("https://images.unsplash.com/photo-1601297183305-6df142704ea2?q=80&w=1470");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-app {
+  width: 380px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.search-box {
+  width: 90%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+input[type="text"] {
+  width: 75%;
+  height: 100%;
+  text-align: center;
+  padding: 2px 5px;
+  border-radius: 25px;
+  border: none;
+  background: rgba(255, 255, 255, 0.6);
+  transition: 0.2s ease-out;
+}
+
+input[type="text"]::placeholder {
+  color: #555;
+}
+
+input[type="text"]:focus {
+  outline: 2px solid #ffffff;
+  background: rgba(255, 255, 255, 0.9);
+  transition: 0.3s ease;
+}
+
+#search-btn {
+  width: 22%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-weight: 600;
+  color: white;
+  border-radius: 25px;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#search-btn:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+}
+
+.weather-app > p {
+  color: white;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.location-box {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+#current-location-btn {
+  width: 60%;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 25px;
+  border: none;
+  background: rgba(255, 255, 255, 0.6);
+  color: #333;
+}
+
+#current-location-btn:hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.weather-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 55%;
+  color: white;
+  text-align: center;
+}
+
+.temperature h1 {
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.city-name h2 {
+  font-weight: 500;
+  letter-spacing: 3px;
+  font-variant: small-caps;
+  opacity: 0.9;
+}
+.imgdetail {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 60%;
+  height: 15%;
+}
+.weather-img {
+  width: 20%;
+  height: 90%;
+}
+
+.weather-details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 95%;
+  padding: 12px 5px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+}
+
+.wind,
+.pressure,
+.humidity {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 5px;
+  width: 30%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.wind p:first-child,
+.pressure p:first-child,
+.humidity p:first-child {
+  font-size: 12px;
+  opacity: 0.7;
+  font-weight: 400;
+}
+
+#rst {
+  width: 20%;
+  height: 20%;
+  border-radius: 25px;
+  border: none;
+  color: black;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+}
+
+#rst:hover {
+  background-color: rgba(255, 255, 255, 0.279);
+  border: none;
+  font-weight: 500;
+  opacity: 0.6;
+  cursor: pointer;
+}
+.app-footer {
+  text-align: center;
+  padding: 12px;
+  font-size: 13px;
+  color: #fafafa;
+}
+
+.app-footer a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.app-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
+   BASE STYLES (Mobile-first: applies to ALL sizes
+   unless overridden by a media query below)
+   ============================================ */
+
+.weather-app {
+  width: 90%;
+  height: 95%;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.search-box {
+  width: 95%;
+  height: 40px;
+  gap: 6px;
+}
+input[type="text"] {
+  font-size: 13px;
+}
+
+#search-btn {
+  font-size: 12px;
+}
+
+.location-box {
+  width: 95%;
+  height: 16%;
+  gap: 8px;
+}
+
+#current-location-btn {
+  width: 95%;
+  height: 50%;
+  font-size: 12px;
+  padding: 8px;
+}
+
+.weather-card {
+  width: 100%;
+  height: 50%;
+}
+
+.temperature h1 {
+  font-size: 42px;
+}
+
+.city-name h2 {
+  font-size: 16px;
+}
+.weather-img {
+  width: 20%;
+  height: 80%;
+}
+
+.weather-details {
+  width: 100%;
+  padding: 8px 3px;
+}
+
+.wind,
+.pressure,
+.humidity {
+  font-size: 11px;
+  width: 30%;
+}
+
+/* ============================================
+   360px – 479px  (small phones)
+   ============================================ */
+@media (min-width: 360px) and (max-width: 479px) {
+  .weather-app {
+    width: 92%;
+    height: 92%;
+    padding: 18px;
+  }
+
+  .search-box {
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  input[type="text"] {
+    font-size: 14px;
+    width: 100%;
+    height: 40%;
+  }
+
+  #search-btn {
+    font-size: 13px;
+    width: 50%;
+    height: 40%;
+  }
+
+  .location-box {
+    width: 96%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .location-box > p {
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+  }
+
+  #current-location-btn {
+    width: 100%;
+    height: 45%;
+    font-size: 14px;
+    padding: 5px;
+  }
+  .temperature h1 {
+    font-size: 48px;
+  }
+
+  .city-name h2 {
+    font-size: 25px;
+  }
+  .weather-img {
+    width: 15%;
+    height: 85%;
+  }
+  .desc {
+    font-size: 20px;
+  }
+  .weather-details {
+    width: 95%;
+    padding: 5px;
+    border-radius: 30px;
+    height: 20%;
+  }
+  .weather-details div p {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+  .wind p:first-child,
+  .pressure p:first-child,
+  .humidity p:first-child {
+    font-size: 13px;
+    opacity: 0.7;
+    font-weight: 300;
+  }
+
+  #rst {
+    height: 20%;
+    width: 35%;
+  }
+}
+
+/* ============================================
+   480px – 599px  (large phones)
+   ============================================ */
+@media (min-width: 479px) and (max-width: 600px) {
+  .weather-app {
+    width: 85%;
+    height: 90%;
+    padding: 20px;
+  }
+
+  .search-box {
+    width: 95%;
+    height: 50px;
+  }
+
+  input[type="text"] {
+    font-size: 15px;
+  }
+
+  #search-btn {
+    font-size: 14px;
+    width: 25%;
+  }
+  .location-box {
+    width: 96%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .location-box > p {
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+  }
+
+  #current-location-btn {
+    width: 100%;
+    height: 50%;
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .temperature h1 {
+    font-size: 52px;
+  }
+
+  .city-name h2 {
+    font-size: 25px;
+  }
+  .weather-img {
+    width: 15%;
+    height: 75%;
+  }
+  .desc {
+    font-size: 18px;
+  }
+
+  .weather-details {
+    width: 95%;
+    padding: 5px;
+    border-radius: 30px;
+    height: 20%;
+  }
+  .weather-details div p {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+  .wind p:first-child,
+  .pressure p:first-child,
+  .humidity p:first-child {
+    font-size: 15px;
+    opacity: 0.7;
+    font-weight: 400;
+  }
+  #rst {
+    height: 20%;
+    width: 35%;
+  }
+}
+
+/* ============================================
+   600px – 767px  (small tablets)
+   ============================================ */
+@media (min-width: 600px) and (max-width: 768px) {
+  .weather-app {
+    width: 75%;
+    height: 90%;
+    padding: 20px;
+  }
+  .search-box {
+    width: 90%;
+    height: 45px;
+  }
+
+  input[type="text"] {
+    font-size: 16px;
+    width: 80%;
+  }
+
+  #search-btn {
+    font-size: 15px;
+    width: 22%;
+  }
+
+  .location-box {
+    width: 90%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .location-box > p {
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+  }
+
+  #current-location-btn {
+    width: 100%;
+    height: 50%;
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .temperature h1 {
+    font-size: 60px;
+  }
+
+  .city-name h2 {
+    font-size: 24px;
+  }
+
+  .weather-img {
+    width: 15%;
+    height: 70%;
+  }
+  .desc {
+    font-size: 20px;
+  }
+  .imgdetail {
+    height: 20%;
+  }
+  .weather-details {
+    width: 90%;
+    padding: 12px 5px;
+    border-radius: 30px;
+    height: 25%;
+  }
+  .weather-details div p {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+  .wind p:first-child,
+  .pressure p:first-child,
+  .humidity p:first-child {
+    font-size: 15px;
+    opacity: 0.7;
+    font-weight: 400;
+  }
+  #rst {
+    height: 20%;
+    width: 20%;
+  }
+}
+
+/* ============================================
+   768px – 1023px  (tablets)
+   ============================================ */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .weather-app {
+    width: 55%;
+    height: 95%;
+    padding: 20px;
+  }
+  .search-box {
+    width: 90%;
+    height: 45px;
+  }
+
+  input[type="text"] {
+    font-size: 16px;
+    width: 80%;
+  }
+
+  #search-btn {
+    font-size: 15px;
+    width: 22%;
+  }
+
+  .location-box {
+    width: 90%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .location-box > p {
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+  }
+
+  #current-location-btn {
+    width: 100%;
+    height: 50%;
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .temperature h1 {
+    font-size: 60px;
+  }
+
+  .city-name h2 {
+    font-size: 24px;
+  }
+
+  .weather-img {
+    width: 14%;
+    height: 70%;
+  }
+  .desc {
+    font-size: 20px;
+  }
+  .imgdetail {
+    height: 20%;
+  }
+  .weather-details {
+    width: 90%;
+    padding: 12px 5px;
+    border-radius: 30px;
+    height: 25%;
+  }
+
+  .weather-details div p {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+
+  .wind p:first-child,
+  .pressure p:first-child,
+  .humidity p:first-child {
+    font-size: 15px;
+    opacity: 0.7;
+    font-weight: 400;
+  }
+  #rst {
+    height: 20%;
+    width: 25%;
+  }
+}
+
+/* ============================================
+   1024px – 1249px  (small laptops)
+   ============================================ */
+@media (min-width: 1024px) and (max-width: 1249px) {
+  .weather-app {
+    width: 50%;
+    height: 650px;
+    padding: 20px;
+  }
+  .search-box {
+    width: 90%;
+    height: 60px;
+
+    padding: 5px;
+  }
+  #search-btn {
+    font-size: 15px;
+  }
+  input[type="text"] {
+    font-size: 20px;
+    width: 85%;
+  }
+  .location-box {
+    width: 90%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .location-box > p {
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+  }
+
+  #current-location-btn {
+    width: 100%;
+    height: 50%;
+    font-size: 19px;
+    padding: 5px;
+  }
+
+  .weather-card {
+    height: 50%;
+    width: 90%;
+    padding: 5px;
+  }
+
+  .temperature h1 {
+    font-size: 64px;
+  }
+
+  .city-name h2 {
+    font-size: 24px;
+  }
+  .weather-img {
+    width: 14%;
+    height: 75%;
+  }
+  .desc {
+    font-size: 25px;
+  }
+  .imgdetail {
+    height: 20%;
+  }
+
+  .weather-details {
+    height: 26%;
+    border-radius: 30px;
+  }
+
+  .weather-details div p {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+
+  .wind p:first-child,
+  .pressure p:first-child,
+  .humidity p:first-child {
+    font-size: 15px;
+    opacity: 0.7;
+    font-weight: 400;
+  }
+}
+
+/* ============================================
+   1250px and above  (desktops — open-ended)
+   ============================================ */
+@media (min-width: 1249px) {
+  .weather-app {
+    width: 40%;
+    height: 700px;
+    padding: 20px;
+  }
+  .search-box {
+    width: 90%;
+    height: 60px;
+
+    padding: 5px;
+  }
+  #search-btn {
+    font-size: 15px;
+  }
+
+  input[type="text"] {
+    font-size: 21px;
+    width: 85%;
+  }
+
+  .location-box {
+    width: 90%;
+    height: 20%;
+    display: flex;
+
+    flex-direction: column;
+    align-content: center;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .location-box > p {
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+  }
+
+  #current-location-btn {
+    width: 100%;
+    height: 45%;
+    font-size: 21px;
+    padding: 10px;
+  }
+
+  .weather-card {
+    width: 90%;
+    padding: 5px;
+  }
+
+  .temperature h1 {
+    font-size: 64px;
+  }
+
+  .city-name h2 {
+    font-size: 24px;
+  }
+  .weather-img {
+    width: 20%;
+    height: 80%;
+  }
+  .desc {
+    font-size: 25px;
+  }
+  .imgdetail {
+    height: 20%;
+  }
+  s .weather-details {
+    height: 22%;
+    border-radius: 30px;
+  }
+
+  .weather-details div p {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  .wind p:first-child,
+  .pressure p:first-child,
+  .humidity p:first-child {
+    font-size: 15px;
+    opacity: 0.7;
+    font-weight: 400;
+  }
+}
