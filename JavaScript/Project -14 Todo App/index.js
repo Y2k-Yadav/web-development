@@ -27,9 +27,16 @@ function todoStructure(singleTodo, index) {
     let div = document.createElement('div')
     div.setAttribute('class', 'singleTodo')
 
-    let h2 = document.createElement('h2')
-    h2.setAttribute('class', 'todo-text')
-    h2.textContent = singleTodo.todoVal
+    // ---- top row: label + checkbox grouped on left, remove button on right ----
+    let header = document.createElement('div')
+    header.setAttribute('class', 'todo-header')
+
+    let left = document.createElement('div')
+    left.setAttribute('class', 'todo-left')
+
+    let label = document.createElement('span')
+    label.setAttribute('class', 'todo-label')
+    label.textContent = `Task ${index + 1}`
 
     let checkbox = document.createElement('input')
     checkbox.setAttribute('type', 'checkbox')
@@ -39,6 +46,17 @@ function todoStructure(singleTodo, index) {
     let btn = document.createElement('button')
     btn.setAttribute('class', 'remove-btn')
     btn.textContent = 'Remove Todo'
+
+    left.appendChild(label)
+    left.appendChild(checkbox)
+
+    header.appendChild(left)
+    header.appendChild(btn)
+
+    // ---- bottom row: full content ----
+    let h2 = document.createElement('h2')
+    h2.setAttribute('class', 'todo-text')
+    h2.textContent = singleTodo.todoVal
 
     if (singleTodo.completed) {
         h2.classList.add('completed')
@@ -53,9 +71,8 @@ function todoStructure(singleTodo, index) {
         toggleTodo(index)
     })
 
+    div.appendChild(header)
     div.appendChild(h2)
-    div.appendChild(checkbox)
-    div.appendChild(btn)
 
     document.getElementsByClassName('todo-list')[0].appendChild(div)
 }

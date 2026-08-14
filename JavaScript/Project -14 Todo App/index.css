@@ -93,7 +93,7 @@ body {
     height: 80%;
     padding: 5px;
     overflow-y: auto;
-    gap: 10px;
+    gap: 16px;
 }
 
 .todo-list::-webkit-scrollbar {
@@ -105,20 +105,18 @@ body {
     border-radius: 10px;
 }
 
-/* ---------- FIXED: box now grows with content, never overlaps ---------- */
+/* ---------- Each todo card: header row + content row ---------- */
 .singleTodo {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     width: 100%;
-    height: auto;
-    min-height: 50px;
-    padding: 10px 12px;
+    height: max-content;
+    padding: 16px 18px;
     border-radius: 12px;
     background: #f7f7fb;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    gap: 12px;
 }
 
 .singleTodo:hover {
@@ -126,14 +124,27 @@ body {
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
-.todo-text {
-    width: 65%;
-    padding: 0px 5px;
-    font-size: 16px;
-    color: #333;
-    overflow-wrap: break-word;
-    word-break: break-word;
-    order: 1;
+.todo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e4e0ee;
+}
+
+.todo-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.todo-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #764ba2;
 }
 
 .todo-check {
@@ -142,7 +153,6 @@ body {
     accent-color: #764ba2;
     cursor: pointer;
     flex-shrink: 0;
-    order: 2;
 }
 
 .remove-btn {
@@ -155,13 +165,23 @@ body {
     font-weight: 500;
     transition: all 0.3s ease;
     flex-shrink: 0;
-    order: 3;
 }
 
 .remove-btn:hover {
     cursor: pointer;
     transform: scale(1.05);
     box-shadow: 0 4px 10px rgba(255, 82, 82, 0.4);
+}
+
+.todo-text {
+    width: 100%;
+    font-size: 16px;
+    line-height: 1.7;
+    letter-spacing: 0.2px;
+    color: #333;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: justify;
 }
 
 .completed {
@@ -192,8 +212,18 @@ body {
         font-size: 14px;
     }
 
+    .singleTodo {
+        padding: 14px 16px;
+        gap: 10px;
+    }
+
     .todo-text {
         font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .todo-label {
+        font-size: 12px;
     }
 }
 
@@ -230,26 +260,34 @@ body {
 
     .todo-list {
         width: 95%;
+        gap: 12px;
     }
 
-.singleTodo {
-    min-height: 50px;
-    padding: 10px;
-    gap: 8px;
-}
+    .singleTodo {
+        padding: 12px 14px;
+        gap: 8px;
+    }
 
-.todo-text {
-    width: 80%;
-    font-size: 14px;
-}
+    .todo-header {
+        padding-bottom: 8px;
+    }
+
+    .todo-left {
+        gap: 8px;
+    }
+
+    .todo-label {
+        font-size: 11px;
+    }
+
+    .todo-text {
+        width: 100%;
+        font-size: 14px;
+        line-height: 1.55;
+    }
 
     .remove-btn {
         padding: 5px 10px;
         font-size: 12px;
-        order: 3;
-    }
-
-    .todo-check {
-        order: 2;
     }
 }
